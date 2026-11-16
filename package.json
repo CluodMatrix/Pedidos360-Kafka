@@ -1,0 +1,30 @@
+{
+  "name": "pedidos360-kafka",
+  "version": "1.0.0",
+  "description": "DSY1107 EA3 - Kafka aplicado a Pedidos360 (productor, consumidores report/audit, admin y DLT)",
+  "private": true,
+  "scripts": {
+    "up": "docker compose up -d",
+    "down": "docker compose down",
+    "reset": "docker compose down && docker compose up -d && npm run topics",
+    "topics": "node admin/setup.js",
+    "admin": "node admin/server.js",
+    "producer": "node bridge/producer.js",
+    "puente": "node bridge/desde-sqs.js",
+    "report": "node report/consumer.js",
+    "audit": "node audit/consumer.js",
+    "report-api": "node report/server.js",
+    "audit-api": "node audit/server.js",
+    "lag": "node util/lag.js",
+    "carga": "node util/carga.js",
+    "particiones": "node util/particiones.js",
+    "retencion": "node util/retencion.js",
+    "replicas": "node util/replicas.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.700.0",
+    "dotenv": "^18.0.10",
+    "express": "^4.21.2",
+    "kafkajs": "^2.2.4"
+  }
+}
