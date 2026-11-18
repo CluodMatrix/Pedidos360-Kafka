@@ -19,7 +19,9 @@ const TIPOS = [
   'PEDIDO_CANCELADO',
 ];
 
-const ROLES = ['CLIENTE', 'OPERADOR', 'DRIVER'];
+// Roles del caso Pedidos360 (mismos que en Entra ID): el cliente crea el pedido
+// y el staff (ADMIN u OPERADOR) cambia su estado.
+const ROLES = ['CLIENTE', 'OPERADOR', 'ADMIN'];
 
 const VERSION = 2;
 

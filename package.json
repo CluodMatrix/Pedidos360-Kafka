@@ -19,7 +19,9 @@
     "carga": "node util/carga.js",
     "particiones": "node util/particiones.js",
     "retencion": "node util/retencion.js",
-    "replicas": "node util/replicas.js"
+    "replicas": "node util/replicas.js",
+    "demo-consumidor": "node util/consumidor-demo.js",
+    "demo-reset": "node util/demo-reset.js"
   },
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.700.0",

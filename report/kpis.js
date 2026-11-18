@@ -28,6 +28,11 @@ function esNuevo(evento) {
   return true;
 }
 
+/** true si el evento ya fue aplicado (duplicado). No lo marca como procesado. */
+function yaProcesado(evento) {
+  return Boolean(evento.eventId) && procesados.has(evento.eventId);
+}
+
 /** Aplica un evento a los KPI. Los repetidos se ignoran. */
 function aplicar(evento) {
   if (!esNuevo(evento)) return false; // duplicado: no cuenta dos veces
@@ -121,4 +126,4 @@ function reiniciar() {
   procesados.clear();
 }
 
-module.exports = { aplicar, obtener, estadoDe, totalProcesados, reiniciar };
+module.exports = { aplicar, obtener, estadoDe, totalProcesados, reiniciar, yaProcesado };
